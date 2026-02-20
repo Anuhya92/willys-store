@@ -1,0 +1,35 @@
+<%- include('../partials/header', { title: 'Stores' }) %>
+<%- include('../partials/nav', { activePage: 'stores' }) %>
+
+<main>
+  <section class="page-hero page-hero--stores">
+    <div class="page-hero-content">
+      <h1>Our Stores</h1>
+      <p>Find a Willys near you — we're always close by</p>
+    </div>
+  </section>
+
+  <section class="page-content">
+    <div class="container">
+      <% if (typeof regions !== 'undefined' && regions.length > 0) { %>
+        <div class="cards-grid">
+          <% regions.forEach(function(region) { %>
+            <a href="/stores/<%= region.slug %>" class="card">
+              <div class="card-icon"><%= region.emoji %></div>
+              <div class="card-body">
+                <h3><%= region.name %></h3>
+                <p><%= region.description %></p>
+                <span class="card-meta"><%= region.storeCount %> stores</span>
+              </div>
+              <span class="card-arrow">→</span>
+            </a>
+          <% }) %>
+        </div>
+      <% } else { %>
+        <p class="empty-msg">No regions found.</p>
+      <% } %>
+    </div>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>

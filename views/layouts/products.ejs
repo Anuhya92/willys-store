@@ -1,0 +1,35 @@
+<%- include('../partials/header', { title: 'Products' }) %>
+<%- include('../partials/nav', { activePage: 'products' }) %>
+
+<main>
+  <section class="page-hero page-hero--products">
+    <div class="page-hero-content">
+      <h1>Our Products</h1>
+      <p>Discover fresh quality across all our categories</p>
+    </div>
+  </section>
+
+  <section class="page-content">
+    <div class="container">
+      <% if (typeof categories !== 'undefined' && categories.length > 0) { %>
+        <div class="cards-grid">
+          <% categories.forEach(function(cat) { %>
+            <a href="/products/<%= cat.slug %>" class="card">
+              <div class="card-icon"><%= cat.emoji %></div>
+              <div class="card-body">
+                <h3><%= cat.name %></h3>
+                <p><%= cat.description %></p>
+                <span class="card-meta"><%= cat.itemCount %> items</span>
+              </div>
+              <span class="card-arrow">→</span>
+            </a>
+          <% }) %>
+        </div>
+      <% } else { %>
+        <p class="empty-msg">No product categories found.</p>
+      <% } %>
+    </div>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>

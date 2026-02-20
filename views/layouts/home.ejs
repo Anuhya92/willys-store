@@ -1,0 +1,55 @@
+<%- include('../partials/header', { title: 'Home' }) %>
+<%- include('../partials/nav', { activePage: 'home' }) %>
+
+<main>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      
+      <h1 class="hero-title">Fresh. <span>Local.</span><br>Affordable.</h1>
+      <p class="hero-sub">Sweden's favourite supermarket — quality groceries at prices that make a difference.</p>
+      <div class="hero-btns">
+        <a href="/products" class="btn btn-primary">Shop Products</a>
+        <a href="/stores" class="btn btn-outline">Find a Store</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Strip -->
+  <section class="features-strip">
+    <div class="feature">
+      <span class="feat-icon">🌱</span>
+      <span>Organic Range</span>
+    </div>
+    <div class="feature">
+      <span class="feat-icon">🚚</span>
+      <span>Fast Delivery</span>
+    </div>
+    <div class="feature">
+      <span class="feat-icon">💰</span>
+      <span>Best Prices</span>
+    </div>
+    <div class="feature">
+      <span class="feat-icon">♻️</span>
+      <span>Sustainable</span>
+    </div>
+  </section>
+
+  <!-- About Section with image -->
+  <section class="about-section">
+    <div class="about-img-wrap">
+      <img src="/images/store.jpg" alt="Fresh groceries at Willys" class="about-img" />
+    </div>
+    <div class="about-text">
+      <h2>Why Willys?</h2>
+      <p>Since 1975, Willys has been committed to making quality food accessible to everyone in Sweden. We work directly with local farmers and producers to bring you the freshest products at the lowest prices.</p>
+      <p>With over 200 stores nationwide and a growing online presence, we're always close by when you need us.</p>
+      <a href="/stores" class="btn btn-primary">Find Your Nearest Store</a>
+    </div>
+  </section>
+
+  
+</main>
+
+<%- include('../partials/footer') %>

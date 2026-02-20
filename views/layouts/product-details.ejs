@@ -1,0 +1,47 @@
+<%- include('../partials/header', { title: category.name }) %>
+<%- include('../partials/nav', { activePage: 'products' }) %>
+
+<main>
+  <section class="page-hero page-hero--products">
+    <div class="page-hero-content">
+      <div class="breadcrumb">
+        <a href="/products">Products</a> <span>/</span> <%= category.name %>
+      </div>
+      <h1><%= category.emoji %> <%= category.name %></h1>
+      <p><%= category.description %></p>
+    </div>
+  </section>
+
+  <section class="page-content">
+    <div class="container">
+      <% if (typeof items !== 'undefined' && items.length > 0) { %>
+        <div class="product-grid">
+          <% items.forEach(function(item) { %>
+            <div class="product-card">
+              <div class="product-emoji"><%= item.emoji %></div>
+              <div class="product-info">
+                <h3><%= item.name %></h3>
+                <% if (item.origin) { %>
+                  <p class="product-origin">📍 <%= item.origin %></p>
+                <% } %>
+                <% if (item.organic) { %>
+                  <span class="badge badge--organic">🌱 Organic</span>
+                <% } %>
+                <% if (item.sale) { %>
+                  <span class="badge badge--sale">🔥 On Sale</span>
+                <% } %>
+                <p class="product-price"><%= item.price %> kr</p>
+              </div>
+            </div>
+          <% }) %>
+        </div>
+      <% } else { %>
+        <p class="empty-msg">No products found in this category.</p>
+      <% } %>
+
+      <a href="/products" class="btn btn-outline back-btn">← Back to Products</a>
+    </div>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>

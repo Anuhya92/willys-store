@@ -1,0 +1,51 @@
+<%- include('../partials/header', { title: region.name }) %>
+<%- include('../partials/nav', { activePage: 'stores' }) %>
+
+<main>
+  <section class="page-hero page-hero--stores">
+    <div class="page-hero-content">
+      <div class="breadcrumb">
+        <a href="/stores">Stores</a> <span>/</span> <%= region.name %>
+      </div>
+      <h1><%= region.emoji %> <%= region.name %></h1>
+      <p><%= region.description %></p>
+    </div>
+  </section>
+
+  <section class="page-content">
+    <div class="container">
+      <% if (typeof stores !== 'undefined' && stores.length > 0) { %>
+        <div class="store-grid">
+          <% stores.forEach(function(store) { %>
+            <div class="store-card">
+              <div class="store-header">
+                <h3>📍 <%= store.name %></h3>
+                <% if (store.open24h) { %>
+                  <span class="badge badge--open">24h Open</span>
+                <% } %>
+              </div>
+              <p class="store-address"><%= store.address %></p>
+              <div class="store-hours">
+                <strong>Hours:</strong> <%= store.hours %>
+              </div>
+              <% if (store.services && store.services.length > 0) { %>
+                <div class="store-services">
+                  <% store.services.forEach(function(s) { %>
+                    <span class="service-tag"><%= s %></span>
+                  <% }) %>
+                </div>
+              <% } %>
+              <p class="store-phone">📞 <%= store.phone %></p>
+            </div>
+          <% }) %>
+        </div>
+      <% } else { %>
+        <p class="empty-msg">No stores found in this region.</p>
+      <% } %>
+
+      <a href="/stores" class="btn btn-outline back-btn">← Back to Stores</a>
+    </div>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>
