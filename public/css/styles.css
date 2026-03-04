@@ -1,37 +1,3 @@
-/* css variables for easy theming and consistency */
-:root {
-  --green: #1a7a4a;
-  --green-dark: #135c37;
-  --green-light: #e8f5ee;
-  --accent: #f4a622;
-  --red: #e63946;
-  --white: #ffffff;
-  --off-white: #f9f9f7;
-  --gray-100: #f3f3f0;
-  --gray-200: #e8e8e4;
-  --gray-400: #a0a09c;
-  --gray-600: #5a5a56;
-  --gray-900: #1a1a18;
-  --nav-bg: #135c37;
-  --footer-bg: #0d3d24;
-  --accent-hover: #f4a622;
-  --font-display: "Playfair Display", serif;
-  --font-body: "Manrope", sans-serif;
-  --radius: 12px;
-  --radius-sm: 6px;
-  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.14);
-  --transition: 0.25s ease;
-}
-
-/* Global resets and base styles */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 html {
   scroll-behavior: smooth;
 }
@@ -46,12 +12,35 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
 img {
-  max-width: 100%;
   display: block;
+  height: auto;
+  max-width: 100%;
 }
 ul {
   list-style: none;
+}
+
+/* Page-specific styles */
+.home-page,
+.products-page,
+.stores-page {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.home-page {
+  background-image: url("../images/store1.jpg");
+}
+
+.products-page {
+  background-image: url("../images/store2.jpg");
+}
+
+.stores-page {
+  background-image: url("../images/store3.jpg");
 }
 
 /* navbar */
@@ -289,13 +278,13 @@ ul {
 
 /*About Section */
 .about-section {
+  background-color: antiquewhite;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 4rem;
   max-width: 1200px;
-  margin: 5rem auto;
-  padding: 0 1.5rem;
+  padding: 2rem 1rem;
 }
 
 .about-img-wrap {
@@ -655,7 +644,6 @@ ul {
   background: var(--footer-bg);
   color: rgba(255, 255, 255, 0.7);
   padding: 4rem 1.5rem 0;
-  margin-top: 4rem;
 }
 
 .footer-container {
@@ -832,7 +820,6 @@ ul {
 
   .footer {
     padding: 2.5rem 1rem 0;
-    margin-top: 2rem;
   }
   .footer-container {
     grid-template-columns: 1fr;
@@ -900,19 +887,4 @@ ul {
     padding: 0.6rem 1rem;
     font-size: 0.85rem;
   }
-}
-
-html,
-body {
-  overflow-x: hidden;
-  width: 100%;
-}
-
-* {
-  max-width: 100%;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
 }

@@ -20,7 +20,7 @@ app.use(express.static(join(__dirname, 'public')));
 
 // Routes
 app.get('/', (req, res) => {
-  res.render('layouts/home', {
+  res.render('pages/home', {
     title: 'Home',
     activePage: 'home'
   });

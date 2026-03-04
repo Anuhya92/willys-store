@@ -5,7 +5,7 @@ const router = Router();
 
 
 router.get('/', (req, res) => {
-  res.render('layouts/products', {
+  res.render('pages/products', {
     title: 'Products',
     activePage: 'products',
     categories
@@ -18,7 +18,7 @@ router.get('/:slug', (req, res) => {
     return res.status(404).send('Category not found');
   }
   
-  res.render('layouts/product-details', {
+  res.render('pages/product-details', {
     title: category.name,
     activePage: 'products',
     category,

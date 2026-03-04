@@ -1,0 +1,34 @@
+/* css variables for easy theming and consistency */
+:root {
+  --green: #1a7a4a;
+  --green-dark: #135c37;
+  --green-light: #e8f5ee;
+  --accent: #f4a622;
+  --red: #e63946;
+  --white: #ffffff;
+  --off-white: #f9f9f7;
+  --gray-100: #f3f3f0;
+  --gray-200: #e8e8e4;
+  --gray-400: #a0a09c;
+  --gray-600: #5a5a56;
+  --gray-900: #1a1a18;
+  --nav-bg: #135c37;
+  --footer-bg: #0d3d24;
+  --accent-hover: #f4a622;
+  --font-display: "Playfair Display", serif;
+  --font-body: "Manrope", sans-serif;
+  --radius: 12px;
+  --radius-sm: 6px;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.14);
+  --transition: 0.25s ease;
+}
+
+/* Global resets and base styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
