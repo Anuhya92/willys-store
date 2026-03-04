@@ -1,4 +1,4 @@
-<%- include('../partials/header', { title: 'Products' }) %>
+<%- include('../partials/head', { title: 'Products' }) %>
 <%- include('../partials/nav', { activePage: 'products' }) %>
 
 <main>
@@ -14,15 +14,7 @@
       <% if (typeof categories !== 'undefined' && categories.length > 0) { %>
         <div class="cards-grid">
           <% categories.forEach(function(cat) { %>
-            <a href="/products/<%= cat.slug %>" class="card">
-              <div class="card-icon"><%= cat.emoji %></div>
-              <div class="card-body">
-                <h3><%= cat.name %></h3>
-                <p><%= cat.description %></p>
-                <span class="card-meta"><%= cat.itemCount %> items</span>
-              </div>
-              <span class="card-arrow">→</span>
-            </a>
+            <%- include('../partials/card', { data: { ...cat, type: 'products', metaType: 'items' } }) %>
           <% }) %>
         </div>
       <% } else { %>

@@ -1,4 +1,4 @@
-<%- include('../partials/header', { title: 'Stores' }) %>
+<%- include('../partials/head', { title: 'Stores' }) %>
 <%- include('../partials/nav', { activePage: 'stores' }) %>
 
 <main>
@@ -14,15 +14,7 @@
       <% if (typeof regions !== 'undefined' && regions.length > 0) { %>
         <div class="cards-grid">
           <% regions.forEach(function(region) { %>
-            <a href="/stores/<%= region.slug %>" class="card">
-              <div class="card-icon"><%= region.emoji %></div>
-              <div class="card-body">
-                <h3><%= region.name %></h3>
-                <p><%= region.description %></p>
-                <span class="card-meta"><%= region.storeCount %> stores</span>
-              </div>
-              <span class="card-arrow">→</span>
-            </a>
+            <%- include('../partials/card', { data: { ...region, type: 'stores', metaType: 'stores' } }) %>
           <% }) %>
         </div>
       <% } else { %>
